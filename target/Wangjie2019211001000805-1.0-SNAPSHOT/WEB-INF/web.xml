@@ -7,8 +7,48 @@
         <servlet-name>e1</servlet-name>
         <servlet-class>com.wangjie.week2.demo.HelloworldServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <servlet-class>com.wangjie.week3.demo.LifeCycleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.wangjie.week3.demo.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>JDBCDemoServlet</servlet-name>
+        <servlet-class>com.wangjie.week4.demo.JDBCDemoServlet</servlet-class>
+    </servlet>
+    <!--<servlet>
+        <servlet-name>config</servlet-name>
+        <servlet-class>com.wangjie.week4.demo.ConfigDemoServlet</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>wangjie</param-value>
+        </init-param>
+        <init-param>
+            <param-name>student id</param-name>
+            <param-value>2019211001000805</param-value>
+        </init-param>
+    </servlet>-->
     <servlet-mapping>
         <servlet-name>e1</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/life</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JDBCDemoServlet</servlet-name>
+        <url-pattern>/jdbc</url-pattern>
+    </servlet-mapping>
+    <!--<servlet-mapping>
+        <servlet-name>config</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>-->
 </web-app>
