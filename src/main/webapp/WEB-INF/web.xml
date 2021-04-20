@@ -3,6 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>sa</param-value>
+    </context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:sqlserver://localhost;DatabaseName=userdb</param-value>
+    </context-param>
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>admin123456789</param-value>
+    </context-param>
     <servlet>
         <servlet-name>e1</servlet-name>
         <servlet-class>com.wangjie.week2.demo.HelloworldServlet</servlet-class>
@@ -11,4 +27,7 @@
         <servlet-name>e1</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 </web-app>
