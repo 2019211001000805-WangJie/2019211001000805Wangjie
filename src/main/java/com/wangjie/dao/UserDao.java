@@ -3,53 +3,38 @@ package com.wangjie.dao;
 import com.wangjie.model.User;
 
 import javax.xml.transform.Result;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Date;
 import java.util.List;
 
 public class UserDao implements IUserDao{
     @Override
     public boolean saveUser(Connection con, User user) throws SQLException {
+        String sql="insert into userdb values('" + user.getUsername() + "','" + user.getPassword() + "','"
+                + user.getEmail() + "','" + user.getGender() + "','" + user.getBirthdate() + "')";
+        Statement st= con.createStatement();
+        st.executeUpdate(sql);
         return false;
     }
 
     @Override
     public int deleteUser(Connection con, User user) throws SQLException {
-        String sql="delete from userdb where username=?";
+        String sql="delete from userdb where username='"+user.getUsername()+"'";
         PreparedStatement st=con.prepareStatement(sql);
         st.executeUpdate(sql);
-        ResultSet rs=st.executeQuery();
-        if(rs.next()) {
-            user.setUsername(rs.getString("username"));
-            user.setPassword(rs.getString("password"));
-            user.setEmail(rs.getString("email"));
-            user.setGender(rs.getString("gender"));
-            user.setBirthdate(rs.getDate("birthdate"));
-        }
         return 0;
     }
 
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
-        String sql="update  usertable set username=? ";
+        String sql="update  usertable set username='"+user.getUsername()+"',password='"+user.getPassword()+"',email='"+user.getEmail()+"',gender='"+user.getGender()+"',birthdate="+user.getBirthdate();
         PreparedStatement st=con.prepareStatement(sql);
         st.executeUpdate(sql);
-        ResultSet rs=st.executeQuery();
-        if(rs.next()) {
-            user.setUsername(rs.getString("username"));
-            user.setPassword(rs.getString("password"));
-            user.setEmail(rs.getString("email"));
-            user.setGender(rs.getString("gender"));
-            user.setBirthdate(rs.getDate("birthdate"));
-        }
         return 0;
     }
     @Override
     public User findByUsernamePassword(Connection con, String username, String password) throws SQLException {
-        String sql="select username,password,email,gender,birthdate from userdb where username=? and password=?";
+        String sql="select * from userdb where username=? and password=?";
         PreparedStatement st=con.prepareStatement(sql);
         st.setString(1,username);
         st.setString(2,password);
@@ -63,7 +48,7 @@ public class UserDao implements IUserDao{
             user.setGender(rs.getString("gender"));
             user.setBirthdate(rs.getDate("birthdate"));
         }
-        return null;
+        return user;
     }
 
     @Override

@@ -1,7 +1,7 @@
 <html>
  <head>
    <title>My Online Shop</title>
-   
+
  </head>
  <body style="margin:0px;padding:0px;font-family:helvetica;">
  <table width="100%" cellpadding="0" cellspacing="0">
@@ -12,7 +12,7 @@
                             border-color:black;
                             padding:0px;
                             margin:0px;" valign="bottom">
-      
+
      <img src="logo.jpg" align="left">
      </td>
    </tr>
@@ -28,7 +28,7 @@
    - <a style="color:white;" href="productList">Product</a>
    - <a style="color:white;" href="#">FAQ</a>
    - <a style="color:white;" href="#">About</a>
-   
+
    </td>
    </tr>
    <tr height="25"><td align="right"><font size="18" color="blue">
