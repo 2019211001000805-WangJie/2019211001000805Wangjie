@@ -54,6 +54,6 @@ public class UpdateUserServlet extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("user",user);
-        request.getRequestDispatcher("WEB-INF/views/updateUser.jsp").forward(request,response);
+        request.getRequestDispatcher("accountDetails").forward(request,response);
     }
 }
